@@ -48,3 +48,80 @@ For setting up a new project, follow this general sequence:
 3. Design your [Database](03-database.md) schema
 4. Implement [Security Best Practices](07-security.md)
 5. Add additional features as needed (Storage, Edge Functions, Realtime)
+
+## Supabase CLI Installation and Common Commands
+
+### Installation (macOS)
+
+```bash
+# Install via Homebrew
+brew install supabase/tap/supabase
+
+# Verify installation
+supabase --version
+```
+
+### Local Development Commands
+
+```bash
+# Initialize a new project
+supabase init
+
+# Start Supabase locally
+supabase start
+
+# Check status of local services
+supabase status
+
+# Stop local services
+supabase stop
+```
+
+### Database Management Commands
+
+```bash
+# Create a new migration
+supabase migration new my_migration_name
+
+# Apply migrations
+supabase db reset
+
+# Generate types based on your schema
+supabase gen types typescript --local > types/supabase.ts
+```
+
+### Edge Functions Commands
+
+```bash
+# Create a new Edge Function
+supabase functions new my-function-name
+
+# Deploy an Edge Function to production
+supabase functions deploy my-function-name
+
+# Serve Edge Functions locally for testing
+supabase functions serve
+```
+
+### Project Management Commands
+
+```bash
+# Link to a remote project
+supabase link --project-ref your-project-ref
+
+# Get project configuration
+supabase config get
+
+# List all remote projects
+supabase projects list
+```
+
+### Secrets Management Commands
+
+```bash
+# Set secret for Edge Functions
+supabase secrets set MY_SECRET=value
+
+# List all secrets
+supabase secrets list
+```
